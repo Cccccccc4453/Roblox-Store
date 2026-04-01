@@ -165,7 +165,7 @@
 
 
             // Supabase and Admin Auth Status Handler
-            async function handleCombinedAuthStatus() {
+            window.handleAdminPageAuthStatus = async function() {
                 const { data: { session } } = await window.supabaseClient.auth.getSession();
                 const user = session?.user;
 
@@ -223,7 +223,7 @@
                         authMessage.textContent = error.message;
                     } else {
                         authMessage.textContent = '';
-                        await handleCombinedAuthStatus(); // Update UI after login
+                        await window.handleAuthStatus(); // Update UI after login
                     }
                 });
             }
@@ -237,7 +237,7 @@
                         authMessage.textContent = error.message;
                     } else {
                         authMessage.textContent = '';
-                        await handleCombinedAuthStatus(); // Update UI after signup
+                        await window.handleAuthStatus(); // Update UI after signup
                     }
                 });
             }
@@ -245,7 +245,7 @@
             if (logoutButtonNav) {
                 logoutButtonNav.addEventListener('click', async () => {
                     await window.signOut();
-                    await handleCombinedAuthStatus(); // Update UI after logout
+                    await window.handleAuthStatus(); // Update UI after logout
                 });
             }
 
@@ -546,7 +546,7 @@
             });
 
             // Initial call to handle combined auth status
-            handleCombinedAuthStatus();
+            window.handleAuthStatus();
 
             // Listen for auth state changes from Supabase
             window.supabaseClient.auth.onAuthStateChange((event, session) => {

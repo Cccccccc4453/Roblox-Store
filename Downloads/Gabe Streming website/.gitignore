@@ -1,23 +1,68 @@
-node_modules/
+# Git ignore file
+
+# Operating System files
 .DS_Store
-thumbs.db
-.vscode/
-*.log
-*.env
-*.env.*
-.DS_Store
-# Windows thumbnail cache files
 Thumbs.db
-Thumbs.db:encryptable
 
-# Folder config files
-desktop.ini
+# Build artifacts
+*.o
+*.lo
+*.la
+*.al
+*.pyc
+*.pyo
+*.rej
+*.bak
+*~
+*.log
+.fuse_hidden*
+.directory
+.project
+.classpath
+.settings/
+.vscode/
+*.swp
+.idea/
 
-# Recycle Bin
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Editor-specific files
+.idea
+.vscode
+.sublime-project
+.sublime-workspace
+
+# Dependency directories
+venv/
+env/
+.env
+
+# MacOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# VS Code specific
+.vscode/
+
+# Other common temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Ignore AppData and similar system-level paths if they are somehow picked up
+# This is a broad exclusion, ensure your project doesn't legitimately use these paths in its structure.
+# Given the error, it's likely these are outside the project root but were picked up by `git add .`
+AppData/
+*/AppData/
 $RECYCLE.BIN/
-
-# System files
 System Volume Information/
-
-# AMD Cache files
-AppData/Local/AMD/
+*.lnk

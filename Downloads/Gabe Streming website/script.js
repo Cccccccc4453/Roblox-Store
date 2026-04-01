@@ -14,6 +14,9 @@ window.supabaseClient.auth.onAuthStateChange((event, session) => {
     }
 });
 
+// Placeholder for admin-specific auth status handling, defined in admin.html
+window.handleAdminPageAuthStatus = async function() {};
+
 // --- Authentication Functions ---
 window.handleAuthStatus = async function() {
     const { data: { session } } = await window.supabaseClient.auth.getSession();
@@ -34,6 +37,10 @@ window.handleAuthStatus = async function() {
         if (authNavItems) authNavItems.style.display = 'block'; // Changed
         if (userInfoSpan) {
             userInfoSpan.textContent = `Welcome, ${user.email}`;
+        }
+        // If on the admin page, also call the admin-specific handler
+        if (window.location.pathname.includes('admin.html')) {
+            await window.handleAdminPageAuthStatus();
         }
         return user;
     } else {
