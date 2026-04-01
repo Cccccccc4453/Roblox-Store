@@ -1,0 +1,23 @@
+node_modules/
+.DS_Store
+thumbs.db
+.vscode/
+*.log
+*.env
+*.env.*
+.DS_Store
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+
+# Folder config files
+desktop.ini
+
+# Recycle Bin
+$RECYCLE.BIN/
+
+# System files
+System Volume Information/
+
+# AMD Cache files
+AppData/Local/AMD/
