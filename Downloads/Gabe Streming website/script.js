@@ -1,6 +1,6 @@
 // Supabase Client Initialization
-const SUPABASE_URL = 'https://nniegivrkkvzlqkkmtuq.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_RLaStEMHJaLvLGkvEtD25A_2u3yNElf';
+const SUPABASE_URL = '%%SUPABASE_URL%%';
+const SUPABASE_ANON_KEY = '%%SUPABASE_ANON_KEY%%';
 
 const { createClient } = supabase;
 window.supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
